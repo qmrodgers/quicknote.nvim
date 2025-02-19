@@ -68,8 +68,11 @@ return {
     ImportNotesForGlobal = core.ImportNotesForGlobal,
     ImportNotesForCWD = core.ImportNotesForCWD,
 
+    RetrieveNotesForCurrentBuffer = core.RetrieveNotesForCurrentBuffer,
+    RetrieveNotesForCWD = core.RetrieveNotesForCWD,
+    RetrieveNotesForGlobal = core.RetrieveNotesForGlobal,
+
     SelectNotesForCurrentBuffer = core.SelectNotesForCurrentBuffer,
     SelectNotesForCWD = core.SelectNotesForCWD,
-    SelectNotesForAFileOrWDInCWD = core.SelectNotesForAFileOrWDInCWD,
     SelectNotesForGlobal = core.SelectNotesForGlobal,
 }

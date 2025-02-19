@@ -7,6 +7,7 @@ local jump = require("quicknote.core.jump")
 local data = require("quicknote.core.data")
 local count = require("quicknote.core.count")
 local mode = require("quicknote.core.mode")
+local retrieve = require("quicknote.core.retrieve")
 local select = require("quicknote.core.select")
 
 return {
@@ -55,8 +56,11 @@ return {
     ImportNotesForGlobal = data.ImportNotesForGlobal,
     ImportNotesForCWD = data.ImportNotesForCWD,
 
+    RetrieveNotesForCurrentBuffer = retrieve.RetrieveNotesForCurrentBuffer,
+    RetrieveNotesForCWD = retrieve.RetrieveNotesForCWD,
+    RetrieveNotesForGlobal = retrieve.RetrieveNotesForGlobal,
+
     SelectNotesForCurrentBuffer = select.SelectNotesForCurrentBuffer,
     SelectNotesForCWD = select.SelectNotesForCWD,
-    SelectNotesForAFileOrWDInCWD = select.SelectNotesForAFileOrWDInCWD,
     SelectNotesForGlobal = select.SelectNotesForGlobal
 }

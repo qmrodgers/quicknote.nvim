@@ -1,51 +1,43 @@
-local list = require("quicknote.core.list")
+local utils = require("quicknote.utils")
+local retrieve = require("quicknote.core.retrieve")
 local open = require("quicknote.core.open")
+
+local M = {}
 
 local SelectNotes = function(notes, scope)
   if not notes or #notes == 0 then
+    print("No notes to select from.")
     return
   else
     vim.ui.select(notes, {
             prompt = 'Select Note for ' .. scope,
+            format_item = function(item)
+                return item[1]
+            end
     }, function(selected)
-      print("Selected: ", selected)
-      open.checkAndOpenNoteFile(selected)
+      open.checkAndOpenNoteFile(selected[2])
     end)
   end
-
 end
 
-local M = {}
-
 local SelectNotesForCurrentBuffer = function()
-
-  local notes = list.ListNotesForCurrentBuffer()
-  SelectNotes(notes)
-
+  local notes = retrieve.RetrieveNotesForCurrentBuffer()
+  SelectNotes(notes, "Current Buffer")
 end
 M.SelectNotesForCurrentBuffer = SelectNotesForCurrentBuffer
 
 local SelectNotesForCWD = function()
-
-  local notes = list.ListNotesForCWD()
+  local notes = retrieve.RetrieveNotesForCWD()
   SelectNotes(notes, "CWD")
-
 end
 M.SelectNotesForCWD = SelectNotesForCWD
 
-local SelectNotesForAFileOrWDInCWD = function()
-
-  local notes = list.ListNotesForAFileOrWDInCWD()
-  SelectNotes(notes, "AFileOrWDInCWD")
-
-end
-M.SelectNotesForAFileOrWDInCWD = SelectNotesForAFileOrWDInCWD
-
 local SelectNotesForGlobal = function()
-
-  local notes = list.ListNotesForGlobal()
+  if utils.config.GetMode() ~= "resident" then
+      error("Global scope is only available in resident mode")
+  end
+  local notes = retrieve.RetrieveNotesForGlobal()
   SelectNotes(notes, "Global")
-
 end
 M.SelectNotesForGlobal = SelectNotesForGlobal
 
