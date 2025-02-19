@@ -31,7 +31,7 @@ local SelectNotesForCWD = function()
   SelectNotes(notes, "CWD")
 
 end
-M.SelectNotesForCWD = SelectNotesForCurrentBuffer
+M.SelectNotesForCWD = SelectNotesForCWD
 
 local SelectNotesForAFileOrWDInCWD = function()
 
@@ -39,7 +39,7 @@ local SelectNotesForAFileOrWDInCWD = function()
   SelectNotes(notes, "AFileOrWDInCWD")
 
 end
-M.SelectNotesForAFileOrWDInCWD = SelectNotesForCurrentBuffer
+M.SelectNotesForAFileOrWDInCWD = SelectNotesForAFileOrWDInCWD
 
 local SelectNotesForGlobal = function()
 
@@ -47,7 +47,7 @@ local SelectNotesForGlobal = function()
   SelectNotes(notes, "Global")
 
 end
-M.SelectNotesForGlobal = SelectNotesForCurrentBuffer
+M.SelectNotesForGlobal = SelectNotesForGlobal
 
 return M
 
