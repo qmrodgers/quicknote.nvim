@@ -19,6 +19,7 @@ return {
     NewNoteAtLine = new.NewNoteAtLine,
     NewNoteAtCurrentLine = new.NewNoteAtCurrentLine,
 
+    checkAndOpenNoteFile = open.checkAndOpenNoteFile,
     OpenNoteAtGlobal = open.OpenNoteAtGlobal,
     OpenNoteAtCWD = open.OpenNoteAtCWD,
     OpenNoteAtLine = open.OpenNoteAtLine,
@@ -53,4 +54,9 @@ return {
     ImportNotesForCurrentBuffer = data.ImportNotesForCurrentBuffer,
     ImportNotesForGlobal = data.ImportNotesForGlobal,
     ImportNotesForCWD = data.ImportNotesForCWD,
+
+    SelectNotesForCurrentBuffer = select.SelectNotesForCurrentBuffer,
+    SelectNotesForCWD = select.SelectNotesForCWD,
+    SelectNotesForAFileOrWDInCWD = select.SelectNotesForAFileOrWDInCWD,
+    SelectNotesForGlobal = select.SelectNotesForGlobal
 }
