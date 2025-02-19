@@ -7,6 +7,7 @@ local jump = require("quicknote.core.jump")
 local data = require("quicknote.core.data")
 local count = require("quicknote.core.count")
 local mode = require("quicknote.core.mode")
+local select = require("quicknote.core.select")
 
 return {
     SwitchToResidentMode = mode.SwitchToResidentMode,

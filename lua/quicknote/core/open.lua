@@ -17,6 +17,7 @@ local checkAndOpenNoteFile = function(noteFilePath)
         end
     end)
 end
+M.checkAndOpenNoteFile = checkAndOpenNoteFile
 
 -- Open an already existed note at a given line for the current buffer
 -- @param line: line number
